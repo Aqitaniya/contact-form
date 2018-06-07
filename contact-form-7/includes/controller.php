@@ -33,16 +33,12 @@ function wpcf7_widget_text_filter( $content ) {
 add_action( 'wp_enqueue_scripts', 'wpcf7_do_enqueue_scripts' );
 
 function wpcf7_do_enqueue_scripts() {
-	$post_type = get_post_type();
-	$page_id = get_the_ID();
-	if($post_type == 'page' && $page_id == 387){
-		if ( wpcf7_load_js() ) {
-			wpcf7_enqueue_scripts();
-		}
+	if ( wpcf7_load_js() ) {
+		wpcf7_enqueue_scripts();
+	}
 
-		if ( wpcf7_load_css() ) {
-			wpcf7_enqueue_styles();
-		}
+	if ( wpcf7_load_css() ) {
+		wpcf7_enqueue_styles();
 	}
 }
 
